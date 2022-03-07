@@ -1,0 +1,205 @@
+@use "../base/" as *;
+@use "../abstract/" as *;
+
+.testimonials
+{
+    padding: 5rem 5%;
+
+    @include responsive(tablet)
+    {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    @include responsive(portatil)
+    {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.testimonial
+{
+    background-color: $moderate-violet;
+    border-radius: .5rem;
+    @include position(relative);
+    padding: 2rem 9%;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 20px rgba($color: $very-dark-grayish-blue, $alpha: .3);
+
+    @include responsive(tablet)
+    {
+        grid-column: 1/3;
+        margin-bottom: .5rem;
+        padding: 2rem 5%;
+    }
+
+    &::before
+    {
+        background-image: url(/images/bg-pattern-quotation.svg);
+        background-repeat: no-repeat;
+        background-position-x: right;
+        content: "";
+        display: block;
+        @include position(absolute, $right: 2rem, $top: 0);
+        width: 100%;
+        height: 100%;
+        opacity: .6;
+
+        @include responsive(portatil)
+        {
+            @include position(absolute, $right: 8rem, $top: 0);
+        }
+    }
+
+    &__image
+    {
+        border-radius: 50%;
+        width: 2.8rem;
+        border: 2px solid rgba($color: $light-gray, $alpha: .7);
+        @include position(absolute, $top: 2rem);
+    }
+
+    &__profile
+    {
+        margin-left: 4rem;
+    }
+
+    &__name
+    {
+        color: $white;
+
+        &-three
+        {
+            color: $very-dark-grayish-blue;
+        }
+
+        &-five
+        {
+            color: $very-dark-grayish-blue;
+        }
+    }
+
+    &__graduate
+    {
+        color: rgba($color: $white, $alpha: .5);
+
+        &-three
+        {
+            color: rgba($color: $very-dark-grayish-blue, $alpha: .5);
+        }
+
+        &-five
+        {
+            color: rgba($color: $very-dark-grayish-blue, $alpha: .5);
+        }
+    }
+
+    &__text-primary
+    {
+        margin-top: 1rem;
+        font-size: 1.7rem;
+        color: $white;
+        line-height: 1.2;
+
+        &-three
+        {
+            color: $very-dark-grayish-blue;
+        }
+
+        &-five
+        {
+            color: $very-dark-grayish-blue;
+        }
+    }
+
+    &__text-secondary
+    {
+        color: rgba($color: $white, $alpha: .7);
+        margin-top: 1.5rem;
+
+        &-three
+        {
+            color: rgba($color: $very-dark-grayish-blue, $alpha: .7);
+        }
+
+        &-five
+        {
+            color: rgba($color: $very-dark-grayish-blue, $alpha: .7);
+        }
+    }
+
+}
+
+.testimonial-two
+{
+    background-color: $very-dark-grayish-blue;
+
+    @include responsive(tablet)
+    {
+        grid-column: 3/3;
+    }
+
+    &::before
+    {
+        content: "";
+        background-image: none;
+    }
+}
+
+.testimonial-three
+{
+    background-color: $white;
+
+    @include responsive(tablet)
+    {
+        grid-column: 1/2;
+        padding: 2rem 9%;
+    }
+
+    &::before
+    {
+        content: "";
+        background-image: none;
+    }
+
+}
+
+.testimonial-four
+{
+    background-color: $very-dark-blackish-blue;
+
+    @include responsive(tablet)
+    {
+        grid-column: 2/4;
+    }
+
+    &::before
+    {
+        content: "";
+        background-image: none;
+    }
+}
+
+.testimonial-five
+{
+    background-color: $white;
+
+    @include responsive(tablet)
+    {
+        grid-column: 1/4;
+    }
+
+    @include responsive(portatil)
+    {
+        grid-column: 4;
+        grid-row: 1/3;
+        padding: 2rem 12% 0;
+    }
+
+    &::before
+    {
+        content: "";
+        background-image: none;
+    }
+}
